@@ -1,53 +1,67 @@
-import React from 'react'
+import { useState } from "react"
+import StyledHeader from "../styledComponents/StyledHeader"
+import Hamburger from "../assets/Hamburger.jsx"
+import Close from "../assets/Close.jsx"
+import Arrow from "../assets/Arrow.jsx"
 
 const Header = () => {
+    const [showNav, setShowNav] = useState(false)
+
     return (
-        <header>
+        <StyledHeader>
             <div>
-                <div>
-                    <span>Frontend Mentor</span>
-                    <span>Feedback Board</span>
-                </div>
-
-                <button>
-                    {/* // menu */}
-                </button>
-
-                <div>
-                    <button>All</button>
-                    <button>UI</button>
-                    <button>UX</button>
-                    <button>Enhancement</button>
-                    <button>Bug</button>
-                    <button>Feature</button>
-                </div>
-
-                <div>
+                <div className="head">
                     <div>
-                        <span>Roadmap</span>
-                        <button>View</button>
+                        <h1>Frontend Mentor</h1>
+                        <span>Feedback Board</span>
                     </div>
 
-                    <div>
-                        <div>
-                            <span>color</span> Planned <span>2</span>
+
+                    <button onClick={() => setShowNav(prev => (!prev))}>
+                        {!showNav ? <Hamburger /> : <Close />}
+
+                    </button>
+                </div>
+
+                <div className="menu">
+                    <div className="nav">
+                        <div className="card">
+                            <button>All</button>
+                            <button>UI</button>
+                            <button>UX</button>
+                            <button>Enhancement</button>
+                            <button>Bug</button>
+                            <button>Feature</button>
                         </div>
 
-                        <div><span>color</span> In-progress <span>3</span></div>
+                        <div className="card">
+                            <div className="flex">
+                                <span>Roadmap</span>
+                                <button>View</button>
+                            </div>
 
-                        <div><span>color</span> Live <span>1</span></div>
+                            <div>
+                                <div className="flex">
+                                    <span>color</span> Planned <span>2</span>
+                                </div>
+
+                                <div className="flex"><span>color</span> In-progress <span>3</span></div>
+
+                                <div className="flex"><span>color</span> Live <span>1</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div>
-                <div>{ /*no of suggestions go here */}</div>
+            <div className="subHead">
+                <div className="remove">{ /*no of suggestions go here */}</div>
 
-                <div>sort by : <button>Most Upvotes</button></div>
+                <div>sort by : <button>Most Upvotes  <Arrow /></button></div>
 
                 <button>Add Feedback</button>
             </div>
-        </header>
+        </StyledHeader>
     )
 }
 
