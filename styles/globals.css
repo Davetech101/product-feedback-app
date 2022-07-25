@@ -10,6 +10,11 @@ html{
   font-size: 62.5%;
 }
 
+body{
+  background:#F7F8FD;
+  padding: 3.4rem 3.4rem;
+}
+
 button{
   color: inherit;
   font-size: inherit;
