@@ -1,8 +1,12 @@
+import BackBtn from "../../components/BackBtn"
 import FeedbackForm from "../../components/FeedbackForm"
 
 const index = () => {
   return (
-    <FeedbackForm/>
+    <>
+     <BackBtn/>
+     <FeedbackForm/>
+    </>
   )
 }
 
