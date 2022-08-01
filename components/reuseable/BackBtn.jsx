@@ -20,7 +20,7 @@ const BackBtn = ({ color, stroke }) => {
 `
 
     const goBack = () => {
-        Router.back()
+      Router.back()
     }
 
     return (

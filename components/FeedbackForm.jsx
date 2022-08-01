@@ -3,6 +3,7 @@ import StyledFeedbackForm from "../styles/styledComponents/StyledFeedbackForm"
 import Arrow from "../assets/Arrow"
 import { useDispatch } from "react-redux"
 import { createFeedback } from "../redux/feedback/feedbackSlice"
+import Router from "next/router"
 
 const FeedbackForm = () => {
     const [category, setCategory] = useState("Feature")
@@ -94,7 +95,7 @@ const FeedbackForm = () => {
             </div>
              
             <button className="add" type="submit">Add Feedback</button>
-            <button className="cancel" type="button">Cancel</button>
+            <button className="cancel" type="button" onClick={() => Router.back()}>Cancel</button>
         </StyledFeedbackForm>
     )
 }
