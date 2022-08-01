@@ -43,15 +43,6 @@ const StyledHeader = styled.header`
     top:7rem;
   }
 
-  .subHead a{
-    background:#AD1FEA;
-    padding:1rem 1.5rem;
-    border-radius:1rem;
-    text-decoration:none;
-    color:#fff;
-    font-size:1.3rem;
-  }
-
   .menu{
     position:fixed;
     bottom:0;
@@ -77,7 +68,7 @@ const StyledHeader = styled.header`
     right:0;
     background:#F7F8FD;
     width:75%;
-    padding:7.4rem 2.4rem;
+    padding:2.4rem;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -154,6 +145,11 @@ const StyledHeader = styled.header`
 
   .blue{
     background:#62BCFA;
+  }
+
+  button.active{
+    background:#4661E6;
+    color:#FFF;
   }
 `
 

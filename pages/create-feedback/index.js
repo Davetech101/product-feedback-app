@@ -1,12 +1,12 @@
-import BackBtn from "../../components/BackBtn"
+import BackBtn from "../../components/reuseable/BackBtn"
 import FeedbackForm from "../../components/FeedbackForm"
 
 const index = () => {
   return (
-    <>
-     <BackBtn/>
+    <div>
+     <BackBtn color="#647196" stroke="blue"/>
      <FeedbackForm/>
-    </>
+    </div>
   )
 }
 

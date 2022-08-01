@@ -5,6 +5,7 @@ const StyledFeedbackForm = styled.form`
     border-radius:5px;
     padding:4.5rem 2.4rem 2.4rem;
     position:relative;
+    margin-top:5rem;
 
     .svgCont{
         color:#fff;
@@ -109,6 +110,10 @@ const StyledFeedbackForm = styled.form`
     .rotate{
         transform:rotate(-180deg);
         transition:all .2s;
+    }
+
+    .error{
+        font-size:2rem;
     }
 `
 

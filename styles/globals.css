@@ -12,10 +12,11 @@ html{
 
 body{
   background:#F7F8FD;
-  padding: 3.4rem 3.4rem;
+  padding: 3.4rem 2.4rem;
 }
 
 button{
   color: inherit;
   font-size: inherit;
+  cursor:pointer;
 }
