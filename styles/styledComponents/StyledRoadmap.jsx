@@ -28,9 +28,35 @@ const StyledRoadmap = styled.section`
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:2.4rem 3rem;
     font-size:1.3rem;
     border-bottom:1px solid #dfdfdf;
+    background:#F7F8FD;
+   }
+
+   .subHead button{
+      color:grey;    
+      padding:2.4rem 3rem;
+   }
+
+   .subHead button.active{
+      color:#3A4374;
+      font-weight:bold;
+      border-bottom:2px solid ${props => 
+         props.group === "In-Progress" ? "#AD1FEA" : props.group === "Planned" ? "#F49F85" : "#62BCFA"}};
+   }
+
+   .top{
+      margin-bottom:2.4rem;
+   }
+
+   .top h3{
+      font-size:1.8rem;
+      color:#3A4374;
+   }
+
+   .top small{
+      font-size:1.3rem;
+      color:#647196;
    }
 `
 

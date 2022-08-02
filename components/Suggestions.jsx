@@ -42,16 +42,28 @@ const Suggestions = () => {
 
     const filteredFeedbacks = feedbacks.filter(feedback => {
         if (category === "All") {
-            return  <Suggestion key={Math.random()} title={feedback.title} category={feedback.category} detail={feedback.detail} />
-        }else{
+            return <Suggestion
+                key={Math.random()}
+                title={feedback.title}
+                category={feedback.category}
+                detail={feedback.detail}
+                border="0px"
+            />
+        } else {
             return feedback.category === category
         }
     })
 
     const finalFeedbacks = filteredFeedbacks.map(feedback => (
-        <Suggestion key={Math.random()} title={feedback.title} category={feedback.category} detail={feedback.detail} />
+        <Suggestion
+            key={Math.random()}
+            title={feedback.title}
+            category={feedback.category}
+            detail={feedback.detail}
+            border="0px" 
+        />
     ))
-console.log(feedbacks);
+
     return (
         <div style={{ marginTop: "10rem" }}>
             {finalFeedbacks}
