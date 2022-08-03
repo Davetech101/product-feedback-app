@@ -35,7 +35,7 @@ const StyledRoadmap = styled.section`
 
    .subHead button{
       color:grey;    
-      padding:2.4rem 3rem;
+      padding:2.4rem 2rem;
    }
 
    .subHead button.active{

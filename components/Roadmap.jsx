@@ -26,6 +26,20 @@ const dummySuggestiins = [{
 },
 
 {
+    group: "Live",
+    title: "Title two",
+    category: "UX",
+    detail: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, officia.",
+},
+
+{
+    group: "Live",
+    title: "Title two",
+    category: "UX",
+    detail: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, officia.",
+},
+
+{
     group: "Planned",
     title: "Title three",
     category: "Enhancement",
@@ -54,32 +68,32 @@ const dummySuggestiins = [{
 }]
 
 const Roadmap = () => {
-    
-    const [groupSelect, setGroupSelect] = useState({ 
-        title: "In-Progress", 
+
+    const [groupSelect, setGroupSelect] = useState({
+        title: "In-Progress",
         txt: "Currently being developed",
     })
 
     const groups = [
-        { 
-            title: "Planned", 
-            txt: "Ideas prioritized for research" 
-        }, 
+        {
+            title: "Planned",
+            txt: "Ideas prioritized for research"
+        },
 
-        { 
-            title: "In-Progress", 
-            txt: "Currently being developed" 
-        }, 
-        
-        { 
-            title: "Live", 
-            txt: "Released features" 
+        {
+            title: "In-Progress",
+            txt: "Currently being developed"
+        },
+
+        {
+            title: "Live",
+            txt: "Released features"
         }
     ]
 
-    
+
     const filteredFeedbacks = dummySuggestiins.filter(feedback => {
-        return feedback.group === groupSelect.title 
+        return feedback.group === groupSelect.title
     })
 
     const finalFeedbacks = filteredFeedbacks.map(feedback => (
@@ -88,11 +102,11 @@ const Roadmap = () => {
             title={feedback.title}
             category={feedback.category}
             detail={feedback.detail}
-            group={feedback.group} 
+            group={feedback.group}
             border="6px"
-            color={ 
+            color={
                 feedback.group === "In-Progress" ? "#AD1FEA" :
-                feedback.group === "Planned" ? "#F49F85" : "#62BCFA"
+                    feedback.group === "Planned" ? "#F49F85" : "#62BCFA"
             }
         />
     ))
@@ -110,15 +124,17 @@ const Roadmap = () => {
 
             <div className="subHead">
                 {
-                 groups.map(group => 
+                    groups.map(group =>
                     (
-                      <button 
-                      key={group.title} 
-                      onClick={(e) => setGroupSelect(group)}
-                      className={group.title === groupSelect.title ? "active" : ""}
-                      >
-                        {group.title} ()
-                      </button>
+                        <button
+                            key={group.title}
+                            onClick={(e) => setGroupSelect(group)}
+                            className={group.title === groupSelect.title ? "active" : ""}
+                        >
+                            {group.title} ({dummySuggestiins.filter(item => {
+                                return item.group === group.title
+                            }).length})
+                        </button>
                     ))
                 }
             </div>
