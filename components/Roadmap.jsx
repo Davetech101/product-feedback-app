@@ -1,10 +1,10 @@
 import { useState } from "react"
-import Suggestion from "./Suggestion"
+import Suggestion from "./reuseable/Suggestion"
 import StyledRoadmap from "../styles/styledComponents/StyledRoadmap"
 import BackBtn from "./reuseable/BackBtn"
 import AddFeedbackBtn from "./reuseable/AddFeedbackBtn"
 
-const dummySuggestiins = [{
+const dummySuggestiins = [{ 
     group: "In-Progress",
     title: "Title one",
     category: "UI",

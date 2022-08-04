@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { store } from "../redux/store";
-import Suggestion from "./Suggestion";
+import Suggestion from "./reuseable/Suggestion";
 
 const Suggestions = () => {
 

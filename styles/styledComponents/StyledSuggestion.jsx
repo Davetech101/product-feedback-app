@@ -6,7 +6,7 @@ const StyledSuggestions = styled.div`
     padding:2.4rem;
     margin-bottom:1.6rem;
     border-radius:4px;
-    border-top:${props => props.border} solid ${props => props.color};
+    border-top:${props => props.border   } solid ${props => props.color};
     
     h3{
         font-size:1.5rem;

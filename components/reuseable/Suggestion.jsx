@@ -1,4 +1,4 @@
-import StyledSuggestions from "../styles/styledComponents/StyledSuggestion"
+import StyledSuggestions from "../../styles/styledComponents/StyledSuggestion"
 
 const Suggestion = ({ title, category, detail, group, color, border }) => {
   return (
