@@ -1,24 +1,71 @@
-import StyledFeedFeedbackDetail from "../styles/styledComponents/StyledFeedFeedbackDetail"
-import BackBtn from "./reuseable/BackBtn"
-import Suggestion from "./reuseable/Suggestion"
+import Link from "next/link";
+import StyledFeedFeedbackDetail from "../styles/styledComponents/StyledFeedFeedbackDetail";
+import BackBtn from "./reuseable/BackBtn";
+import Suggestion from "./reuseable/Suggestion";
 
 const FeedbackDetail = () => {
-    return (
-        <StyledFeedFeedbackDetail>
-            <div className="top">
-                <BackBtn stroke="blue" />
+  const dummyComments = [
+    {
+      name: "James Skinner",
+      handle: "JSKINNER",
+      comment:
+        "Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.",
+    },
 
-                <button>Edit Feedback</button>
-            </div>
+    {
+        name: "Annie VAl",
+        handle: "Ann",
+        comment:
+          "Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.",
+      },
 
-            <Suggestion
-                title="Add dark theme option"
-                detail="It would help people with light sensitivities and who prefer dark mode."
-                category="Feature"
-                border="none"
-            />
-        </StyledFeedFeedbackDetail>
-    )
-}
+      {
+        name: "Elijah Moses",
+        handle: "Ipathedtheredsea",
+        comment:
+          "Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.",
+      },
 
-export default FeedbackDetail
+      {
+        name: "Ryan Willie",
+        handle: "willyan",
+        comment:
+          "Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.",
+      },
+  ];
+
+  return (
+    <StyledFeedFeedbackDetail>
+      <div className="top">
+        <BackBtn stroke="blue" />
+
+        <Link href="pass">Edit Feedback</Link>
+      </div>
+
+      <Suggestion
+        title="Add dark theme option"
+        detail="It would help people with light sensitivities and who prefer dark mode."
+        category="Feature"
+        border="none"
+      />
+
+      <div className="commentBox">
+        <div>4 Comments</div>
+      </div>
+
+      <div className="addComment">
+         <h3>Add Comment</h3>
+
+         <textarea placeholder="Type your comment here"></textarea>
+
+         <div>
+            <p>{250-0} characters left</p>
+
+            <button>Post Comment</button>
+         </div>
+      </div>
+    </StyledFeedFeedbackDetail>
+  );
+};
+
+export default FeedbackDetail;
