@@ -7,6 +7,7 @@ import Suggestion from "./reuseable/Suggestion";
 const FeedbackDetail = () => {
   const [comment, setComment] = useState("");
 
+
   const dummyComments = [
     {
       name: "James Skinner",
@@ -42,7 +43,7 @@ const FeedbackDetail = () => {
       <div className="top">
         <BackBtn stroke="blue" />
 
-        <Link href="pass">Edit Feedback</Link>
+        <Link href="/pass">Edit Feedback</Link>
       </div>
 
       <Suggestion
