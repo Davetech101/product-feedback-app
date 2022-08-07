@@ -17,6 +17,43 @@ const StyledFeedFeedbackDetail = styled.section`
     font-size: 1.3rem;
   }
 
+  .commentBox{
+    background:#fff;
+    border-radius:4px;
+    padding:2.4rem;
+    margin-bottom:2.4rem;
+  }
+
+  .commentBox > h2{
+    margin-bottom:2.4rem;
+    color:#3A4374;
+    font-size:1.8rem;
+  }
+
+  .comment{
+    padding:2.4rem 0;
+    border-bottom:1px solid rgba(0, 0, 0, .1);
+    color:#647196;
+  }
+
+  .comment .top{
+    margin-bottom:1rem;
+  }
+
+  .comment button{
+    color:#4661E6;
+    font-size:1.3rem;
+  }
+
+  .comment h3{
+    font-size:1.3rem;
+    color:#3A4374;
+  }
+
+  .comment small{
+    font-size:1.3rem;
+  }
+
   .addComment{
     background:#fff;
     border-radius:4px;

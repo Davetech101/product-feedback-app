@@ -7,7 +7,6 @@ import Suggestion from "./reuseable/Suggestion";
 const FeedbackDetail = () => {
   const [comment, setComment] = useState("");
 
-
   const dummyComments = [
     {
       name: "James Skinner",
@@ -54,7 +53,23 @@ const FeedbackDetail = () => {
       />
 
       <div className="commentBox">
-        <div>4 Comments</div>
+        <h2>{dummyComments.length} Comments</h2>
+
+        {dummyComments.map((comment) => (
+          <div key={comment.handle} className="comment">
+            <div className="top">
+              <div className="name">
+                <h3>{comment.name}</h3>
+
+                <small>@{comment.handle}</small>
+              </div>
+
+              <button>Reply</button>
+            </div>
+
+            <p>{comment.comment}</p>
+          </div>
+        ))}
       </div>
 
       <div className="addComment">
