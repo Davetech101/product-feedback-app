@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react"
-import StyledFeedbackForm from "../styles/styledComponents/StyledFeedbackForm"
-import Arrow from "../assets/Arrow"
+import StyledFeedbackForm from "../../styles/styledComponents/StyledFeedbackForm"
+import Arrow from "../../assets/Arrow"
 import { useDispatch } from "react-redux"
-import { createFeedback } from "../redux/feedback/feedbackSlice"
+import { createFeedback } from "../../redux/feedback/feedbackSlice"
 import Router from "next/router"
 
 const FeedbackForm = () => {

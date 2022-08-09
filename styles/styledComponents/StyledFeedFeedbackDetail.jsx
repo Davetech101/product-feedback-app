@@ -34,6 +34,7 @@ const StyledFeedFeedbackDetail = styled.section`
     padding:2.4rem 0;
     border-bottom:1px solid rgba(0, 0, 0, .1);
     color:#647196;
+    font-size:1.3rem;
   }
 
   .comment .top{

@@ -9,10 +9,10 @@ export default function Home() {
   const feedbacks = feedback.feedbacks
 
   return (
-    <div>
+    <>
       {/* <Header />
       {feedbacks.length > 0 ? <Suggestions /> : <NoFeedback />} */}
       <FeedbackDetail/>
-    </div>
+    </>
   )
 }

@@ -1,23 +1,8 @@
 import Router from "next/router"
 import Arrow from "../../assets/Arrow"
-import styled from "styled-components"
+import StyledBackBtn from "../../styles/styledComponents/StyledBackBtn"
 
 const BackBtn = ({ color, stroke }) => {
-
- const StyledBackBtn = styled.button`
-  display:flex;
-  align-items:center;
-  font-size:1.3rem;
-  color:${props => props.color};
-  z-index:1;
-  position:relative;
-
-  span{
-    transform:rotate(85deg);
-    display:block;
-    margin-right:1rem;
-  }
-`
 
     const goBack = () => {
       Router.back()

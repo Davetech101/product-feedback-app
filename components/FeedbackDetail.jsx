@@ -3,9 +3,14 @@ import { useState } from "react";
 import StyledFeedFeedbackDetail from "../styles/styledComponents/StyledFeedFeedbackDetail";
 import BackBtn from "./reuseable/BackBtn";
 import Suggestion from "./reuseable/Suggestion";
+import { useDispatch } from "react-redux"
+import { fbDetail } from "../redux/fbDetail/fbDetailSlice";
+
 
 const FeedbackDetail = () => {
   const [comment, setComment] = useState("");
+  const [reply, setReply] = useState(false);
+  const dispatch = useDispatch()
 
   const dummyComments = [
     {
@@ -37,12 +42,18 @@ const FeedbackDetail = () => {
     },
   ];
 
+  dispatch(fbDetail("log me"))
+
   return (
     <StyledFeedFeedbackDetail>
       <div className="top">
-        <BackBtn stroke="blue" />
+        <BackBtn stroke="blue" color="#647196"/>
 
-        <Link href="/pass">Edit Feedback</Link>
+        <Link
+          href="/edit-feedback"
+        >
+          Edit Feedback
+        </Link>
       </div>
 
       <Suggestion
@@ -64,10 +75,17 @@ const FeedbackDetail = () => {
                 <small>@{comment.handle}</small>
               </div>
 
-              <button>Reply</button>
+              <button onClick={() => setReply((prev) => !prev)}>Reply</button>
             </div>
 
             <p>{comment.comment}</p>
+
+            {reply && (
+              <form>
+                <textarea>{`@${comment.handle}`}</textarea>
+                <button>Post reply</button>
+              </form>
+            )}
           </div>
         ))}
       </div>
