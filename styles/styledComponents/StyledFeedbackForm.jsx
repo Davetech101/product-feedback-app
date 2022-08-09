@@ -16,6 +16,7 @@ const StyledFeedbackForm = styled.form`
         height:4rem;
         display:flex;
         justify-content:center;
+        align-items:center;
         position:absolute;
         top:-2rem;
     }
@@ -46,6 +47,11 @@ const StyledFeedbackForm = styled.form`
         border-radius:5px;
         padding:1.5rem 1rem;
         margin-bottom:2.4rem;
+        color:#3A4374;
+    }
+
+    textarea{
+        color:#3A4374;
     }
 
     button{
@@ -57,12 +63,18 @@ const StyledFeedbackForm = styled.form`
 
     .add{
         background:#AD1FEA;
-        margin-bottom:2.4rem;
+        margin-bottom:1.6rem;
         color:#fff;
     }
 
     .cancel{
         background:#3A4374;
+        color:#fff;
+    }
+
+    .delete{
+        background:#D73737;
+        margin-top:1.6rem;
         color:#fff;
     }
 

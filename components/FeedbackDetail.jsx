@@ -3,14 +3,13 @@ import { useState } from "react";
 import StyledFeedFeedbackDetail from "../styles/styledComponents/StyledFeedFeedbackDetail";
 import BackBtn from "./reuseable/BackBtn";
 import Suggestion from "./reuseable/Suggestion";
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 import { fbDetail } from "../redux/fbDetail/fbDetailSlice";
-
 
 const FeedbackDetail = () => {
   const [comment, setComment] = useState("");
   const [reply, setReply] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const dummyComments = [
     {
@@ -42,24 +41,29 @@ const FeedbackDetail = () => {
     },
   ];
 
-  dispatch(fbDetail("log me"))
+  const details = {
+    title: "Add dark theme option",
+    detail:
+      "It would help people with light sensitivities and who prefer dark mode.",
+    category: "UI",
+  };
+
+  dispatch(
+    fbDetail(details)
+  );
 
   return (
     <StyledFeedFeedbackDetail>
       <div className="top">
-        <BackBtn stroke="blue" color="#647196"/>
+        <BackBtn stroke="blue" color="#647196" />
 
-        <Link
-          href="/edit-feedback"
-        >
-          Edit Feedback
-        </Link>
+        <Link href="/edit-feedback">Edit Feedback</Link>
       </div>
 
       <Suggestion
-        title="Add dark theme option"
-        detail="It would help people with light sensitivities and who prefer dark mode."
-        category="Feature"
+        title={details.title}
+        detail={details.detail}
+        category={details.category}
         border="none"
       />
 

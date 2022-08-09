@@ -1,13 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = ""
+const initialState = {}
 
 export const fbDetailSlice = createSlice({
     name: "fbDetail",
     initialState,
     reducers: {
         fbDetail: (state, action) => {
-            console.log(state, action.payload);
+            const newState =  {details: action.payload}
+            return newState
         }
     }
 })
