@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StyledFeedFeedbackDetail from "../styles/styledComponents/StyledFeedFeedbackDetail";
 import BackBtn from "./reuseable/BackBtn";
 import Suggestion from "./reuseable/Suggestion";
@@ -48,16 +48,14 @@ const FeedbackDetail = () => {
     category: "UI",
   };
 
-  dispatch(
-    fbDetail(details)
-  );
-
   return (
     <StyledFeedFeedbackDetail>
       <div className="top">
         <BackBtn stroke="blue" color="#647196" />
 
-        <Link href="/edit-feedback">Edit Feedback</Link>
+        <Link href="/edit-feedback" passHref>
+          <a onClick={() => dispatch(fbDetail(details))}>Edit Feedback</a>
+        </Link>
       </div>
 
       <Suggestion

@@ -8,18 +8,20 @@ import { useSelector } from "react-redux";
 import Edit from "../../assets/Edit";
 
 const FeedbackForm = () => {
+  const dispatch = useDispatch();
   const { details } = useSelector((store) => store.details);
 
   const [category, setCategory] = useState(
     details ? details.category : "Feature"
   );
+
   const [showSelect, setShowSelect] = useState(false);
   const [formData, setFormData] = useState({
     title: details ? details.title : "",
-    detail: "",
+    detail: details? details.detail: "",
   });
+  
   const categories = ["UI", "UX", "Enhancement", "Bug", "Feature"];
-  const dispatch = useDispatch();
 
   const categorySelcet = categories.map((category) => (
     <button
@@ -121,9 +123,9 @@ const FeedbackForm = () => {
           id="detail"
           className="input"
           onChange={onChange}
+          value={formData.detail}
           required
         >
-          {details && details.detail}
         </textarea>
       </div>
 
