@@ -9,6 +9,7 @@ import { fbDetail } from "../redux/fbDetail/fbDetailSlice";
 const FeedbackDetail = () => {
   const [comment, setComment] = useState("");
   const [reply, setReply] = useState(false);
+  const [id, setId] = useState(null);
   const dispatch = useDispatch();
 
   const dummyComments = [
@@ -68,7 +69,7 @@ const FeedbackDetail = () => {
       <div className="commentBox">
         <h2>{dummyComments.length} Comments</h2>
 
-        {dummyComments.map((comment) => (
+        {dummyComments.map((comment, idx) => (
           <div key={comment.handle} className="comment">
             <div className="top">
               <div className="name">
@@ -77,14 +78,26 @@ const FeedbackDetail = () => {
                 <small>@{comment.handle}</small>
               </div>
 
-              <button onClick={() => setReply((prev) => !prev)}>Reply</button>
+              <button
+                onClick={() =>
+                  setId((prev) => {
+                    if (prev === idx) {
+                      return null;
+                    } else {
+                      return idx;
+                    }
+                  })
+                }
+              >
+                Reply
+              </button>
             </div>
 
             <p>{comment.comment}</p>
 
-            {reply && (
-              <form>
-                <textarea>{`@${comment.handle}`}</textarea>
+            {id === idx && (
+              <form className="reply">
+                <textarea value={`@${comment.handle}`} name="nameeee" />
                 <button>Post reply</button>
               </form>
             )}
@@ -100,7 +113,7 @@ const FeedbackDetail = () => {
             placeholder="Type your comment here"
             maxLength="250"
             onChange={(e) => setComment(e.target.value)}
-          ></textarea>
+          />
 
           <div>
             <p>{250 - comment.length} characters left</p>
