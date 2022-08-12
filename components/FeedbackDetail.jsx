@@ -8,9 +8,10 @@ import { fbDetail } from "../redux/fbDetail/fbDetailSlice";
 
 const FeedbackDetail = () => {
   const [comment, setComment] = useState("");
-  const [reply, setReply] = useState(false);
+  const [reply, setReply] = useState("");
   const [id, setId] = useState(null);
   const dispatch = useDispatch();
+  console.log(reply);
 
   const dummyComments = [
     {
@@ -97,7 +98,10 @@ const FeedbackDetail = () => {
 
             {id === idx && (
               <form className="reply">
-                <textarea value={`@${comment.handle}`} name="nameeee" />
+                <textarea
+                  value={reply}
+                  onChange={(e) => setReply(e.target.value)}
+                >{`@${comment.handle}`}</textarea>
                 <button>Post reply</button>
               </form>
             )}
